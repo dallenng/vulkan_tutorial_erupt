@@ -1,0 +1,17 @@
+[package]
+name = "vulkan_tutorial_erupt"
+version = "0.1.0"
+edition = "2018"
+authors = ["Guillaume Dallenne <dallenneguillaume@gmail.com>"]
+license = "MIT OR Apache-2.0"
+default-run = "28_mipmapping"
+
+[dependencies]
+color-eyre = "0.5"
+erupt = "0.20"
+flexi_logger = "0.19"
+glam = { version = "0.18", features = ["debug-glam-assert"] }
+image = "0.23"
+log = "0.4"
+tobj = "3"
+winit = "0.25"
