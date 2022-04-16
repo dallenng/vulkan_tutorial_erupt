@@ -1,4 +1,4 @@
-use std::array;
+
 use std::ffi::CStr;
 use std::os::raw::{c_char, c_void};
 
@@ -66,11 +66,11 @@ unsafe extern "system" fn debug_callback(
 ) -> Bool32 {
     use {DebugUtilsMessageSeverityFlagBitsEXT as Severity, DebugUtilsMessageTypeFlagsEXT as Type};
 
-    let mut types = array::IntoIter::new([
+    let mut types = vec![
         (Type::GENERAL_EXT, "General"),
         (Type::VALIDATION_EXT, "Validation"),
         (Type::PERFORMANCE_EXT, "Performance"),
-    ])
+    ].into_iter()
     .filter_map(|(flag, flag_str)| message_types.contains(flag).then(|| flag_str))
     .collect::<Vec<_>>();
 
